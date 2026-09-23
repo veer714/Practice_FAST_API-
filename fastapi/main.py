@@ -133,5 +133,8 @@ def delete_patient( patient_id:str):
         raise HTTPException(status_code= 404 , detail= 'patient not found')
 
     del data[patient_id]
+    save_data(data)
     return JSONResponse(status_code=200, content= 'patient deleted succesfully' )
+
+
 
